@@ -22,13 +22,12 @@
               :price="prod.price"
               :image="prod.image"
             />
-            <!-- {{ counter }} -->
+            <!-- <ReviewComponent @input-review="newReview" /> -->
           </div>
         </div>
       </div>
     </div>
   </div>
-  <!-- </div> -->
 </template>
 
 //Använda lang $$??
@@ -50,13 +49,20 @@
 </style>
 
 <script>
+  // import ReviewComponent from '../components/ReviewComponent.vue'
   import AddToCart from './AddCounter.vue'
   import { mapActions } from 'vuex'
   import axios from 'axios'
 
   export default {
+    data() {
+      return {
+        x: ''
+      }
+    },
     components: {
       AddToCart
+      // ReviewComponent
     },
     computed: {
       displayProducts() {
@@ -64,6 +70,11 @@
       }
     },
     methods: {
+      newReview(review) {
+        this.x = review
+        console.log(review)
+        console.log(`Strängen är ${review}.`)
+      },
       getFunc() {
         axios.get('https://fakestoreapi.com/products').then((response) => {
           this.fetchedProducts = response.data

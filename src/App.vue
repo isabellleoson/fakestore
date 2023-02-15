@@ -24,10 +24,13 @@
   }
 </script>
 
-<style>
+<style scoped>
   li {
     list-style: none;
     color: rgb(30, 27, 27);
+  }
+  p {
+    font-size: 10px;
   }
 </style>
 
@@ -45,4 +48,5 @@
   <main>
     <RouterView />
   </main>
+  <footer><p>(c) Copywrite Isabell Leoson 2023</p></footer>
 </template>

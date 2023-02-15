@@ -1,7 +1,4 @@
 <template>
-  <input type="button" @click="startGame" />
-  <input v-model="s" type="text" />
-
   <div class="container">
     <div v-for="cartProduct in v" :key="cartProduct.id">
       <div class="card bg-light mb-3" style="max-width: 10rem">
@@ -37,15 +34,6 @@
 
 <script>
   export default {
-    data() {
-      return { s: '' }
-    },
-    emits: ['start-game'],
-    methods: {
-      startGame() {
-        this.$emit('start-game', this.s)
-      }
-    },
     computed: {
       products() {
         return this.$store.getters.product

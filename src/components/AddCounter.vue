@@ -37,9 +37,7 @@
       return this.$store.state.counter
     },
     methods: {
-      onClick(product) {
-        this.$store.dispatch('addProductToCart', product)
-
+      onClick() {
         this.$store.commit('increment', {
           id: this.id,
           title: this.title,

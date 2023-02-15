@@ -4,8 +4,6 @@
   <CartCards />
 </template>
 
-//SASS
-
 <script>
   import CartCards from '../components/CartCards.vue'
   export default {

@@ -3,7 +3,6 @@ import axios from 'axios'
 
 export default createStore({
   state: {
-    login: 'Ditt namn',
     fetchedProducts: [],
     counter: 0,
     cart: [],
@@ -41,9 +40,9 @@ export default createStore({
         })
     }
   },
-  // ..?
-  getters: {
-    product: (state) => state.product
-  },
+
+  // getters: {
+  //   product: (state) => state.product
+  // },
   strict: true
 })

@@ -22,7 +22,6 @@
               :price="prod.price"
               :image="prod.image"
             />
-            <!-- <ReviewComponent @input-review="newReview" /> -->
           </div>
         </div>
       </div>
@@ -30,7 +29,6 @@
   </div>
 </template>
 
-//Använda lang $$??
 <style>
   .card {
     display: flex;
@@ -49,10 +47,8 @@
 </style>
 
 <script>
-  // import ReviewComponent from '../components/ReviewComponent.vue'
   import AddToCart from './AddCounter.vue'
   import { mapActions } from 'vuex'
-  import axios from 'axios'
 
   export default {
     data() {
@@ -62,7 +58,6 @@
     },
     components: {
       AddToCart
-      // ReviewComponent
     },
     computed: {
       displayProducts() {
@@ -75,20 +70,12 @@
         console.log(review)
         console.log(`Strängen är ${review}.`)
       },
-      getFunc() {
-        axios.get('https://fakestoreapi.com/products').then((response) => {
-          this.fetchedProducts = response.data
-          console.log(this.fetchedProducts)
-          console.log(response.data)
-        })
-      },
-      ...mapActions(['getProductsFunc', 'setProducts', 'productZero'])
+
+      ...mapActions(['getProductsFunc'])
     },
 
     created() {
-      console.log(this.$route.params.userName)
       this.getProductsFunc()
-      this.getFunc()
     }
   }
 </script>

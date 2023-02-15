@@ -3,9 +3,10 @@
   <div class="input-group mb-3">
     <div class="input-group-prepend">
       <form @submit.prevent="onSubmit">
-        <input v-model="userName" placeholder="Namn..." />
+        <input v-model="userName" placeholder="Name..." />
         <input type="submit" value="Logga in" />
       </form>
+      <p>Name: {{ user }}</p>
     </div>
   </div>
 </template>
@@ -14,11 +15,8 @@
   $margin: 20px;
   $padding: 10px;
 
-  h1 {
-    margin: $margin;
-    padding: $padding;
-  }
-
+  h1,
+  p,
   input {
     margin: $margin;
     padding: $padding;
@@ -29,22 +27,25 @@
   export default {
     data() {
       return {
-        userName: ''
+        userName: '',
+        user: ''
       }
     },
 
     methods: {
       onSubmit() {
-        this.msg = 'Välkommen ' + this.userName + '!'
+        this.msg = 'Welcome ' + this.userName + '!'
         this.$router.push({
           path: '/:shop/' + this.userName,
           query: { msg: this.msg }
         })
       }
     },
+
     watch: {
-      userName(x) {
-        console.log(`${x}`)
+      userName(newValue) {
+        console.log(newValue)
+        this.user = newValue
       }
     }
   }

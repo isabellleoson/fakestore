@@ -2,6 +2,7 @@
   <p>Write a review!</p>
   <textarea class="form-control" v-model="review" cols="50" rows="5" />
   <input
+    v-if="review !== ''"
     class="btn btn-secondary btn-sm"
     type="button"
     @click="reviewFunc"

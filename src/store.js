@@ -41,8 +41,5 @@ export default createStore({
     }
   },
 
-  // getters: {
-  //   product: (state) => state.product
-  // },
   strict: true
 })

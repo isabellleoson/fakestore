@@ -22,7 +22,6 @@
     components: {
       ProductCards,
       ReviewComponent
-      // footerComponent
     },
     computed: {
       message() {
@@ -33,7 +32,6 @@
       newReview(review) {
         this.x = review
         console.log(review)
-        console.log(`Strängen är ${review}.`)
       }
     }
   }
